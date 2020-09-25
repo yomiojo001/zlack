@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+
+.nav{
+  background-color: #888;
+  color: whitesmoke;
+  
+}
+.nav-items{
+  overflow: hidden;
+  padding: 20px 40px;
+}
+.nav-items h3{
+    float: left;
+}
+.nav-items p{
+  padding-right: 150px;
+  float: right;
+}
