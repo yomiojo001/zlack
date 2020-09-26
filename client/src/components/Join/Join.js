@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 const Join = () => {
@@ -17,18 +17,19 @@ const Join = () => {
         //             <button className="button" type="submit">Sign In</button>
         //         </Link>
         //     </div>
+        <Container>
             <Form>
                 <h1>Join</h1>
                 <FormGroup row>
-                    <Label for="name" sm={2}>Email</Label>
+                    <Label for="name" sm={2}>Name</Label>
                     <Col sm={10}>
-                    <Input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+                    <Input type="text" value={name} placeholder="Name" onChange={(e) => setName(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="room" sm={2}>Password</Label>
+                    <Label for="room" sm={2}>Room</Label>
                     <Col sm={10}>
-                    <Input type="text" placeholder="Room" onChange={(e) => setRoom(e.target.value)} />
+                    <Input type="text" value={room} placeholder="Room" onChange={(e) => setRoom(e.target.value)} />
                     </Col>
                 </FormGroup>
                 <FormGroup check row>
@@ -39,6 +40,7 @@ const Join = () => {
                     </Link>
                 </FormGroup>
             </Form>
+            </Container>
     )
 }
 
