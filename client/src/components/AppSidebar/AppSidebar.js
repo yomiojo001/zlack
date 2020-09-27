@@ -1,18 +1,17 @@
-import React, {useState} from'react'
-import onlineIcon from '../../icon/onlineIcon.png'
+import React from 'react'
+import ScrollToBottom from 'react-scroll-to-bottom'
+import Sidebar from '../Sidebar/Sidebar'
+
+const AppSidebar = ({messages, name}) => {
 
 
-const AppSidebar = ({name,room}) => {
-
-
-
-
-    return (
-        <div>
-            <h1>{name}</h1>
-        </div>
+    return(
+        <ScrollToBottom>
+            <h4>Users interaction</h4>
+            {messages.map((message, i) => <div key={i}><Sidebar message={message} name={name} /></div>)}
+        </ScrollToBottom>
     )
 }
 
 
-export default AppSidebar;
+export default AppSidebar

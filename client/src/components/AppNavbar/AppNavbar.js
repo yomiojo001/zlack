@@ -30,10 +30,10 @@ const AppNavbar = ({name,room}) => {
                         <Collapse isOpen={isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                             <NavItem>
-                                    <NavLink href="#"><img src={onlineIcon} alt="online image" className="mr-1" />{name}</NavLink>
+                                    <NavLink href="#"><img src={onlineIcon} alt="online" className="mr-1" />{name}</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/">Sign Out</NavLink>
+                                    <NavLink href="/">sign out</NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
