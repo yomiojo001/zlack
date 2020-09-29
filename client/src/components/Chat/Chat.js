@@ -65,13 +65,13 @@ const Chat = ({location}) => {
 
     return(
         <div>
+            <div className="min-vh-100">
             <AppNavbar room={room} name={name} />
-            <div className="container-fluid">
             <Row>
-                <Col md="3" className=" h-100 bg-success">
+                <Col md="3" className=" min-vh-100 bg-success">
                     <AppSidebar messages={messages} name={name} />
                 </Col>
-                <Col md="9">
+                <Col md="9" className=" min-vh-100">
                     <Messages messages={messages} name={name} />
                     <MessageInput message={message} setMessage={setMessage} sendMessage={sendMessage} />
                 </Col>

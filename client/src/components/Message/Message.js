@@ -13,7 +13,7 @@ const Message = ({message:{user,text}, name}) => {
     return(
         isSentByCurrentUser
         ? (
-            <div className="p-3 my-2 rounded">
+            <div className="p-3 my-2 rounded d-flex justify-content-end">
                 <Toast>
                     <ToastHeader>
                         {trimmedName}
@@ -25,7 +25,7 @@ const Message = ({message:{user,text}, name}) => {
             </div>
         )
         : (
-            <div className="p-3 my-2 rounded float">
+            <div className="p-3 my-2 rounded ">
                 <Toast>
                     <ToastHeader>
                         {user}

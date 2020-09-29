@@ -7,7 +7,7 @@ const AppSidebar = ({messages, name}) => {
 
     return(
         <ScrollToBottom>
-            <h4>Users interaction</h4>
+            <h5 className="text-center mt-2">Users log</h5>
             {messages.map((message, i) => <div key={i}><Sidebar message={message} name={name} /></div>)}
         </ScrollToBottom>
     )

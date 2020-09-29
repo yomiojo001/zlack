@@ -6,6 +6,7 @@ import ChatStore from './ChatStore';
 import Nav from './Nav';
 import AddChat from './AddChat'
 import {ChatProvider} from './ChatContext'
+import Home from './components/Home/Home';
 import Chat from './components/Chat/Chat';
 import Join from './components/Join/Join'
 
@@ -16,9 +17,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Join} />
+      <Route path="/" exact component={Home} />
+      <Route path="/join" component={Join} />
       <Route path="/chat" component={Chat} />
-    </Router>
+    </Router> 
     // <ChatProvider>
     //   <div className="App">
     //     <Nav />
