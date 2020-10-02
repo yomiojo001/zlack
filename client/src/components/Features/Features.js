@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-     Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody
-  } from 'reactstrap';
+import { Card, CardImg, CardText, CardDeck, CardBody } from 'reactstrap';
 import './Features.css'
 
 

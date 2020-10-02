@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './App.css';
 import ChatStore from './ChatStore';
-import Nav from './Nav';
 import AddChat from './AddChat'
 import {ChatProvider} from './ChatContext'
 import Home from './components/Home/Home';
@@ -23,7 +22,6 @@ function App() {
     </Router> 
     // <ChatProvider>
     //   <div className="App">
-    //     <Nav />
     //     <AddChat />
     //     <ChatStore />
     //   </div>

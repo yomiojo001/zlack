@@ -1,13 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 import Outline from '../Outline/Outline'
-
-import { Jumbotron, Button } from 'reactstrap';
+import RegisterModal from '../RegisterModal/RegisterModal'
+import Join from '../Join/Join'
+import { Jumbotron, ButtonGroup } from 'reactstrap';
 
 import './Banner.css'
 
 
-const Banner = ({}) => {
+const Banner = () => {
     
     
 
@@ -20,9 +20,9 @@ const Banner = ({}) => {
                 <h1 className="display-3 mt-1">Welcome to Zlack Chat!</h1>
                 <p className="lead">Zlack chat is a social media platform developed with ReactJS, Socket.io &amp; NodeJs.</p>
                 <p className="my-2">Zlack chat is a new app that limit every user within a chat room based on the invite of a user in that room.</p>
-                <p className="lead mt-4">
-                <Link to="/join"><Button className="mr-3" color="danger">Login</Button></Link><Link to=""><Button color="danger">Register</Button></Link>
-                </p>
+                <ButtonGroup className="mt-4">
+                    < Join /><RegisterModal />
+                </ButtonGroup>
             </Jumbotron>
             
             <Outline />

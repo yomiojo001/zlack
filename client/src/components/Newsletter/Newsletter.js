@@ -9,7 +9,7 @@ const Newsletter = ({}) => {
 
     return(
         <div className="container-fluid bg-newsletter p-4 text-center text-white">
-            <h1 className="pt-5">Newsletter <span class="font-weight-lighter">Signup</span></h1>
+            <h1 className="pt-5">Newsletter <span className="font-weight-lighter">Signup</span></h1>
             <p>Subscribe to our news letter to receive our latest updates</p>
             <Row className="pb-5 pt-2">
               <Col sm="12" md={{ size: 6, offset: 3 }}>

@@ -1,5 +1,4 @@
 import React, {useState, useContext} from 'react';
-import Chat from './Chat';
 import {ChatContext} from './ChatContext'
 
 const ChatStore = () => {

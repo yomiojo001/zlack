@@ -22,15 +22,15 @@ const AppNavbar = ({name,room}) => {
 
 
     return (
-        <div>
+            <div>
                 <Navbar color="dark" dark expand="sm" > 
                     <Container>
-                        <NavbarBrand href="/">Logo</NavbarBrand>
+                        <NavbarBrand href="/"><img className="w-50" src="https://res.cloudinary.com/dr42i3vg0/image/upload/v1601322404/zlacklogo.fw_omtsps.png" alt="logo" /></NavbarBrand>
                         <NavbarToggler onClick={toggle} />
                         <Collapse isOpen={isOpen} navbar>
                             <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                    <NavLink href="#"><img src={onlineIcon} alt="online" className="mr-1" />{name}</NavLink>
+                                <NavItem>
+                                    <NavLink href="#"><img src={onlineIcon} alt="online" className="mr-1" /><i className="fa fa-user px-1" aria-hidden="true"></i>{name}</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="/">sign out</NavLink>
@@ -38,7 +38,6 @@ const AppNavbar = ({name,room}) => {
                             </Nav>
                         </Collapse>
                     </Container>
-
                 </Navbar>
             </div>
     )

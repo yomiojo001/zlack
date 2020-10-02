@@ -7,6 +7,8 @@ import AppSidebar from '../AppSidebar/AppSidebar'
 import MessageInput from '../MessageInput/MessageInput'
 import Messages from '../Messages/Messages'
 
+import './chat.css'
+
 let socket;
 
 const Chat = ({location}) => {
@@ -43,13 +45,8 @@ const Chat = ({location}) => {
         socket.on('message', (message) => {
             setMessages([...messages, message])
         })
-
-        socket.on('roomData', ({users}) => {
-            setUsers(users)
-        })
-    console.log(users);
         
-    },[messages,users])
+    },[messages])
 
     // function for sending messages
     const sendMessage = (e) => {
@@ -65,15 +62,15 @@ const Chat = ({location}) => {
 
     return(
         <div>
-            <div className="min-vh-100">
+            <div className="chat-section">
             <AppNavbar room={room} name={name} />
-            <Row>
-                <Col md="3" className=" min-vh-100 bg-success">
+            <Row className="m-0">
+                <Col md="3" className="chat-section bg-secondary">
                     <AppSidebar messages={messages} name={name} />
                 </Col>
-                <Col md="9" className=" min-vh-100">
-                    <Messages messages={messages} name={name} />
-                    <MessageInput message={message} setMessage={setMessage} sendMessage={sendMessage} />
+                <Col md="9" sm="12" xs="12" className="chat-section">
+                        <Messages messages={messages} name={name} />
+                        <MessageInput message={message} setMessage={setMessage} sendMessage={sendMessage} />
                 </Col>
             </Row>
             </div>

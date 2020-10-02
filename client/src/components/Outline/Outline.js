@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-    Container, Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody
-  } from 'reactstrap';
+    Card, CardDeck} from 'reactstrap';
 import './Outline.css'
 
 
@@ -16,10 +14,10 @@ const Outline = ({}) => {
             <div className="outline-cards m-auto">
             <CardDeck>
                 <Card>
-                    <i class="fa fa-comments outline-icons pb-2" aria-hidden="true"></i>
+                    <i className="fa fa-comments outline-icons pb-2" aria-hidden="true"></i>
                 </Card>
                 <Card>
-                    <i class="fa fa-users outline-users pt-4" aria-hidden="true"></i>
+                    <i className="fa fa-users outline-users pt-4" aria-hidden="true"></i>
                 </Card>
                 <Card>
                     <i className="fa fa-lock outline-icons p-2" aria-hidden="true"></i>
