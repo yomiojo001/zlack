@@ -3,8 +3,8 @@ import {
     Container, Card, Button, CardImg, CardTitle, CardText, CardDeck,
     CardSubtitle, CardBody
   } from 'reactstrap';
+import './Outline.css'
 
-import '../Banner/Banner.css'
 
 
 const Outline = ({}) => {
@@ -12,38 +12,23 @@ const Outline = ({}) => {
     
 
     return(
-        <div>
-            <Container>
+        <div className="outline">
+            <div className="outline-cards m-auto">
             <CardDeck>
                 <Card>
-                    <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-                    <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                    <Button>Button</Button>
-                    </CardBody>
+                    <i class="fa fa-comments outline-icons pb-2" aria-hidden="true"></i>
                 </Card>
                 <Card>
-                    <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-                    <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Button</Button>
-                    </CardBody>
+                    <i class="fa fa-users outline-users pt-4" aria-hidden="true"></i>
                 </Card>
                 <Card>
-                    <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-                    <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-                    <Button>Button</Button>
-                    </CardBody>
+                    <i className="fa fa-lock outline-icons p-2" aria-hidden="true"></i>
                 </Card>
             </CardDeck>
-            </Container>
+            </div>
+            <div className="w-75 m-auto">
+            <p className="outline-text display-4 p-5 mb-n5 font-weight-bold text-center">Use it on your phone, tablet &amp; desktop<br /><span className="display-4">and it's free</span></p>
+            </div>
         </div>
     )
 }

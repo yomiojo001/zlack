@@ -1,0 +1,37 @@
+.list-group-item{
+    border: 0 !important;
+    padding: .5em 0 !important;
+}
+.list-group-item-action:focus, .list-group-item-action:hover {
+    background-color: none !important;
+}
+.app-group:hover{
+    background-color: none !important;
+}
+.app-group-list:hover{
+    background-color: none !important;
+    text-decoration: underline;
+}
+.app-group-list:hover{
+    background-color: none !important;
+}
+.footer{
+    background-color: rgb(240, 240, 240);
+}
+.footer-container{
+    overflow: hidden;
+}
+.app-group p{
+    margin-bottom: .5em !important;
+
+}
+.app-group hr {
+    height: 2px;
+    left: 0;
+    width: 20%;
+    background: #088dcd;
+    margin-top: 0 !important;
+}
+.footer-logo-img{
+    width: 80%;
+}
