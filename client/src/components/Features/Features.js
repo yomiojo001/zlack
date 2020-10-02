@@ -15,7 +15,7 @@ const Features = () => {
         <div className="features container-fluid py-5">
             <div className="w-75 m-auto">
 
-            <h2 className="feature-header text-center">How  to use</h2>
+            <h2 className="feature-header text-center">How it works</h2>
             <hr className="m-auto" />
             <CardDeck className="m-5">
                 <Card className="text-center">

@@ -4,9 +4,11 @@ const socketio = require('socket.io')
 const app = express()
 const http = require('http')
 
+const { addUser, removeUser, getUser, getUsersInRoom} = require('./users')
+
 const port = process.env.PORT || 4000
-const route = require("../routes/index");
-app.use(route)
+const router = require("./router");
+app.use(router)
 
 const server = http.createServer(app);
 const io = socketio(server)
@@ -14,19 +16,37 @@ const io = socketio(server)
 
 
 io.on('connection', (socket) => {
-    if('connection'){
-    return console.log('New client Connected')} 
 
-    socket.emit("userID", socket.id)
-    
-    socket.emit('message', 'Welcome!')
+    socket.on('join', ({name, room}, callback) => {
+        const { error, user } = addUser({id:socket.id, name, room})
 
-    socket.on('sending', (body) => {
-        io.emit('message',body)
+        if(error) return callback(error)
+
+        socket.emit('message', {user: 'admin', text: `${user.name}, welcome to the room ${user.room}`})
+        socket.broadcast.to(user.room).emit('message', {user: 'admin', text: `${user.name}, has joined` })
+
+        socket.join(user.room);
+
+        io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)})
+
+        callback()
+    })
+
+    socket.on('sendMessage', (message, callback) => {
+        const user = getUser(socket.id)
+
+        io.to(user.room).emit('message', {user: user.name, text: message })
+        io.to(user.room).emit('roomData', {room: user.room, users: getUsersInRoom(user.room) })
+        
+        
+        callback()
     })
 
     socket.on("disconnect", () => {
-        console.log('Client disconnected');
+        const user = removeUser(socket.id)
+        if(user){
+            io.to(user.room).emit('message', {user: 'admin', text: `${user.name} has left!!!`})
+        }
     })
 })
 
