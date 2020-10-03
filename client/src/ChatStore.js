@@ -6,7 +6,7 @@ const ChatStore = () => {
     return(
         <div>
             {chats.map(chat => (
-                <Chat message={chat.message} key={chat.id} />
+                <div message={chat.message} key={chat.id}></div>
             ))}
         </div>
     )
