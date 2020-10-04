@@ -1,0 +1,16 @@
+.jumbotron{
+    background: linear-gradient(rgba(22, 122, 236, 0.3), rgba(22, 122, 236, 0.3)), url('https://res.cloudinary.com/dr42i3vg0/image/upload/v1601276317/zlack-bannr_r3sstt.jpg');
+    height: 75vh;
+    border-radius: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width: 576px) {
+    .logo{
+        width: 80%;
+    }
+    h1.display-3.mt-1 {
+        font-size: 3em;
+    }
+ }

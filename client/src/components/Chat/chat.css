@@ -1,0 +1,14 @@
+.chat-section{
+  min-height: 90.5vh !important;
+}
+@media (max-width: 775px){
+  .chat-section.bg-secondary.col-md-3 {
+    display: none !important;
+    
+}
+.chat-section.col-12.col-sm-12.col-md-9 {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+}
+
+}

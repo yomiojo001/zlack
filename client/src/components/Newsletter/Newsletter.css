@@ -1,0 +1,6 @@
+ .bg-newsletter{
+    background: linear-gradient(rgba(83, 86, 90, 0.3), rgba(83, 86, 90, 0.3)), url('https://res.cloudinary.com/dr42i3vg0/image/upload/v1601557824/newslltt_t3prvw.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
