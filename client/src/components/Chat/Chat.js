@@ -44,14 +44,13 @@ const Chat = ({location}) => {
         })
 
 
-        socket.on("roomData", ({ users }) => {
+        socket.on("roomUsers", ({ users }) => {
             setUsers(users);
 
           });
+          console.log(users);
+          
         
-
-          
-          
     },[messages])
 
    

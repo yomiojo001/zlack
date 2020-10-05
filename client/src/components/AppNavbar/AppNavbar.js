@@ -43,7 +43,7 @@ const AppNavbar = () => {
                                     <NavLink href="#"><img src={onlineIcon} alt="online" className="mr-1" /><i className="fa fa-user px-1" aria-hidden="true"></i>{name}</NavLink>
                                 </NavItem>
                                 <NavItem className="mt-1">
-                                    <NavLink href="/">sign out</NavLink>
+                                    <NavLink href="/">Signout</NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
