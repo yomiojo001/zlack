@@ -13,7 +13,7 @@ import './chat.css'
 let socket;
 
 const Chat = ({location}) => {
-    const {name, setName, room, setRoom, message, setMessage, messages, setMessages} = useContext(ChatContext)
+    const {name, setName, room, setRoom, users, setUsers, message, setMessage, messages, setMessages} = useContext(ChatContext)
     const ENDPOINT = 'localhost:4000'
 
     useEffect(() => {
@@ -42,8 +42,22 @@ const Chat = ({location}) => {
         socket.on('message', (message) => {
             setMessages([...messages, message])
         })
+
+
+        socket.on("roomData", ({ users }) => {
+            setUsers(users);
+
+          });
         
+
+          
+          
     },[messages])
+
+   
+
+
+    
 
     // function for sending messages
     const sendMessage = (e) => {

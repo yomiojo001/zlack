@@ -9,6 +9,7 @@ export const ChatProvider = (props) => {
     const [name, setName] = useState('')
     const [room, setRoom] = useState('')
     const [message, setMessage] = useState('')
+    const [users, setUsers] = useState([]);
     const [messages, setMessages] = useState([])
 
     // Make the context object:
@@ -17,6 +18,8 @@ export const ChatProvider = (props) => {
         setName,
         room, 
         setRoom,
+        users, 
+        setUsers,
         message,
         setMessage,
         messages, 

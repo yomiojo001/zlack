@@ -1,27 +1,17 @@
 import React from 'react'
 import { Toast, ToastHeader } from 'reactstrap';
 
-const Sidebar = ({message:{user,text,time}, name}) => {
-    let isSentByCurrentUser = false
-
-    const trimmedName = name.trim().toLowerCase()
-
-    if(user === trimmedName){
-        isSentByCurrentUser = true;
-    }
+const Sidebar = ({name}) => {
+    
     return(
-        isSentByCurrentUser
-        ? 
-        null
-        : (
             <div className="p-3 my-2 rounded">
                 <Toast>
                     <ToastHeader>
-                        {user}
+                        {name}
                     </ToastHeader>
                 </Toast>
             </div>
-        )
+        
     )
 }
 
