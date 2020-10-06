@@ -35,6 +35,7 @@ io.on('connection', (socket) => {
         callback()
     })
 
+    // sends a messsage to users
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id)
 
@@ -43,6 +44,7 @@ io.on('connection', (socket) => {
         
         callback()
     })
+
 
     socket.on("disconnect", () => {
         const user = removeUser(socket.id)
