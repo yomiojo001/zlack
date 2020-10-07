@@ -5,6 +5,7 @@ import {ChatContext} from '../../ChatContext'
 
 
 const Messages = () => {
+    // gets data from context
     const {name, messages} = useContext(ChatContext)
 
 

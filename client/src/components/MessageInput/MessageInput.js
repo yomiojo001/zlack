@@ -6,6 +6,7 @@ import './MessageInput.css'
 
 
 const MessageInput = ({ sendMessage}) => {
+    // Gets data from context
     const { message, setMessage } = useContext(ChatContext)
 
 

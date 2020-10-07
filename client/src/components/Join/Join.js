@@ -1,15 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom'
 import { Container, Col, Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import RegisterModal from '../RegisterModal/RegisterModal'
+import {useAuth0} from '@auth0/auth0-react'
+import {ChatContext} from '../../ChatContext'
 
 const Join = () => {
+    const {loginWithRedirect} = useAuth0()
 
-    const [name, setName] = useState('')
-    const [room, setRoom] = useState('')
+    // gets data from context
+    const { name, setName, room, setRoom } = useContext(ChatContext)
+
+    // use state to toggle modal
     const [modal, setModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+    const toggle = () => setModal(!modal);
 
     return(
 
@@ -19,7 +24,7 @@ const Join = () => {
                 toggle={toggle}>
                 <ModalHeader toggle={toggle}>Login</ModalHeader>
                 <ModalBody>
-                    <Form>
+                    <Form className="w-100">
                         <FormGroup row>
                             <Label for="name" sm={2}>Username</Label>
                             <Col sm={10}>

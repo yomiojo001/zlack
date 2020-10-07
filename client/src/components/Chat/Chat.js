@@ -13,10 +13,15 @@ import './chat.css'
 let socket;
 
 const Chat = ({location}) => {
+    // gets data from context
     const {name, setName, room, setRoom, users, setUsers, message, setMessage, messages, setMessages} = useContext(ChatContext)
+    
+    // declares base url
     const ENDPOINT = 'localhost:4000'
 
+    
     useEffect(() => {
+        // fetches data from the url using query string
         const {name, room} = queryString.parse(location.search)
 
         socket = io(ENDPOINT)
@@ -24,12 +29,14 @@ const Chat = ({location}) => {
         setName(name);
         setRoom(room)
 
+        // sends message to server that a user has joined
         socket.emit('join', {name, room},(error) => {
             if(error){
                 alert(error)
             }
         })
         
+        // disconnects socket when a user sign out
         return () => {
             socket.emit('disconnect');
 
@@ -37,18 +44,17 @@ const Chat = ({location}) => {
         }
     },[ENDPOINT,location.search])
 
-    // 
+    
     useEffect(() => {
+        // gets users message and add it to the messages array
         socket.on('message', (message) => {
             setMessages([...messages, message])
         })
 
-
+        // gets all users in a room
         socket.on("roomUsers", ({ users }) => {
             setUsers(users);
-
           });
-          console.log(users);
           
         
     },[messages])

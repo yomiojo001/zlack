@@ -17,10 +17,12 @@ import onlineIcon from '../../icon/onlineIcon.png'
 
 
 const AppNavbar = () => {
+
+    // gets data from context
     const {name} = useContext(ChatContext)
 
 
-
+    // use state to toggle navbar
     const[isOpen,setIsOpen] = useState(false)
 
 

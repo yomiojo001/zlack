@@ -1,5 +1,6 @@
 const users = [];
 
+// funtion to add a user with username and room name
 const addUser = ({id, name, room}) => {
 
     name = name.trim().toLowerCase()
@@ -18,7 +19,7 @@ const addUser = ({id, name, room}) => {
     return {user}
 }
 
-
+// funtion to remove a user
 const removeUser = (id) => {
     const index = users.findIndex((user) => user.id === id)
 
@@ -27,8 +28,10 @@ const removeUser = (id) => {
     }
 }
 
+// function to get a single user
 const getUser = (id) => users.find((user) => user.id === id)
 
+// function to get all users in a room
 const getUsersInRoom = (room) => users.filter((user) => user.room === room)
 
 

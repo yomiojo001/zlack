@@ -4,10 +4,12 @@ import ReactEmoji from 'react-emoji'
 import moment from 'moment'
 
 const Message = ({message:{user,text,time}, name}) => {
+    
     let isSentByCurrentUser = false
 
     const trimmedName = name.trim().toLowerCase()
 
+    // condiotional to checks message sender before rendering message
     if(user === trimmedName){
         isSentByCurrentUser = true;
     }

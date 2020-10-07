@@ -4,6 +4,7 @@ import { Toast, ToastHeader, Button, Modal, ModalHeader, ModalBody, ModalFooter 
 import {ChatContext} from '../../ChatContext'
 
 const Notification = () => {
+    // gets data from context
     const { message:{user}, name, messages } = useContext(ChatContext)
     
     

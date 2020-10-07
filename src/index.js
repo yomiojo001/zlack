@@ -14,9 +14,9 @@ const server = http.createServer(app);
 const io = socketio(server)
 
 
-
 io.on('connection', (socket) => {
 
+    // User sign in with username and room name
     socket.on('join', ({name, room}, callback) => {
         const { error, user } = addUser({id:socket.id, name, room})
 
@@ -24,9 +24,13 @@ io.on('connection', (socket) => {
 
         socket.join(user.room);
 
+        // sends welcome message to respective user
         socket.emit('message', {user: 'admin', text: `${user.name}, welcome to the room ${user.room}`})
+
+        // notifies all other user in a room that a new user has joined
         socket.broadcast.to(user.room).emit('message', {user: 'admin', text: `${user.name}, has joined`, time: new Date().getTime() })
 
+        // sends room data to the respective room
         io.to(user.room).emit('roomUsers', { room: user.room, users: getUsersInRoom(user.room) });
 
         socket.join(user.room);
@@ -35,7 +39,7 @@ io.on('connection', (socket) => {
         callback()
     })
 
-    // sends a messsage to users
+    // sends a messsage to users in a room
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id)
 
@@ -45,7 +49,7 @@ io.on('connection', (socket) => {
         callback()
     })
 
-
+    // user logout
     socket.on("disconnect", () => {
         const user = removeUser(socket.id)
         if(user){
@@ -57,7 +61,7 @@ io.on('connection', (socket) => {
 
 
 
-
+// server listens on port
 server.listen(port, () => {
     console.log(`server listens on port ${port}`);
 })

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import Join from '../Join/Join'
 const RegisterModal = () => {
-
+  // use staet to toggle modal
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
