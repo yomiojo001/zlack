@@ -66,12 +66,15 @@ io.on('connection', (socket) => {
 })
 
 
+// Serve static assets if in production
+if(process.env.NODE_ENV === 'production'){
 // Set static folder
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.get('/', (req,res) => {
+app.get('*', (req,res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
+}
 
 // server listens on port
 server.listen(port, () => {
