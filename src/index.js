@@ -9,7 +9,11 @@ const { addUser, removeUser, getUser, getUsersInRoom} = require('./users')
 
 const port = process.env.PORT || 4000
 const router = require("./router");
+
+// Use Routes
 app.use(router)
+
+// Use CORS
 app.use(cors())
 
 const server = http.createServer(app);
@@ -62,6 +66,15 @@ io.on('connection', (socket) => {
 })
 
 
+// Serve static assets if in production
+if(process.env.NODE_ENV === 'production'){
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req,res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 // server listens on port
 server.listen(port, () => {
