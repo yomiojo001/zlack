@@ -17,7 +17,7 @@ const Chat = ({location}) => {
     const {name, setName, room, setRoom, users, setUsers, message, setMessage, messages, setMessages} = useContext(ChatContext)
     
     // declares base url
-    const ENDPOINT = 'https://zlack-chat.herokuapp.com'
+    const ENDPOINT = 'https://zlack-chat.eu-gb.cf.appdomain.cloud/'
 
     
     useEffect(() => {
