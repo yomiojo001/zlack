@@ -3,12 +3,14 @@ const express = require('express');
 const socketio = require('socket.io')
 const app = express()
 const http = require('http')
+const cors = require('cors')
 
 const { addUser, removeUser, getUser, getUsersInRoom} = require('./users')
 
 const port = process.env.PORT || 4000
 const router = require("./router");
 app.use(router)
+app.use(cors())
 
 const server = http.createServer(app);
 const io = socketio(server)

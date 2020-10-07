@@ -1,0 +1,9 @@
+applications:
+- name: zlack-chat
+  buildpack: sdk-for-nodejs
+  command: npm start
+  instances: 1
+  memory: 128M
+  random-route: true
+  env:
+    OPTIMIZE_MEMORY: true
