@@ -9,7 +9,34 @@ Live site deployed on
 <img src="https://res.cloudinary.com/dr42i3vg0/image/upload/v1602166112/Screenshot_994_1_ragw9j.png" />
 <br>
 <br>
-<h3>Project Setup</h3>
+<h2>Project Setup</h2>
 
-<pre><code>git clone </code></pre>
+<pre><code>git clone https://github.com/yomiojo001/zlack.git</code></pre>
+<p>To install node modules in server</p>
+<pre><code>npm install</code></pre>
+<p>To install node modules in client</p>
+<pre><code>npm run client-install</code></pre>
+
+<h3>To serve app developement</h3>
+<pre><code>npm run dev</code></pre>
+<p>To serve client side stand alone</p>
+<pre><code>npm run client</code></pre>
+<p>To serve server side with client build stand alone</p>
+<pre><code>npm run server</code></pre>
+
+<h3>To view app from server</h3>
+<pre><code>http://localhost:4000</code></pre>
+
+<p>Click login to sign in (enter username and room name) into the chat app and be directed to the messaging interface</p>
+<p>Register modal not working</p>
+
+<h3>To do</h3>
+<li>Connect register modal to the app</li>
+<li>The Signup and Login form will be validated</li>
+<li>Notification modal should show logs of senders with time</li>
+
+
+
+
+
 
