@@ -21,7 +21,7 @@ Live site deployed on
 <pre><code>npm run dev</code></pre>
 <p>To serve client side stand alone</p>
 <pre><code>npm run client</code></pre>
-<p>To serve server side with client build stand alone</p>
+<p>To serve server side with client build</p>
 <pre><code>npm run server</code></pre>
 
 <h3>To view app from server</h3>
