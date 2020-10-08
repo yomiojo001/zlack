@@ -1,5 +1,5 @@
 <h1>ZLACK CHAT</h1>
-<p>A realtime messaging app</p>
+<p>A realtime messaging app built with ReactJS & NodeJS, Usecontext for state management & Bootstrap for styling.</p>
 
 Live site on
 <a href="https://zlack-chat.eu-gb.cf.appdomain.cloud/">IBMCLOUD</a>,
